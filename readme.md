@@ -1,48 +1,28 @@
+<html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulário de Dados Pessoais</title>
+</head>
+<body>
+  <h2>Formulário de Dados Pessoais</h2>
+  <form>
+    <label for="nome">Nome completo:</label><br>
+    <input type="text" id="nome" name="nome" required><br><br>
 
-## Proof of concept of an Electron packaged Vaadin web application
+    <label for="idade">Idade:</label><br>
+    <input type="number" id="idade" name="idade" required><br><br>
 
-This kind of packaged application is useful to have in a same code base the possibility to run locally (as an Electron application) and to install on a remote server as a normal web application.
+    <label for="email">E-mail:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
 
-This project is inspired to the very good: https://github.com/appreciated/maven-springboot-electron
+    <label for="telefone">Telefone:</label><br>
+    <input type="tel" id="telefone" name="telefone"><br><br>
 
-With some upgrades:
+    <label for="endereco">Endereço:</label><br>
+    <input type="text" id="endereco" name="endereco"><br><br>
 
-- Java 21 : as compilation language but also as embedded JRE to be shipped with the application
-- Vaadin: 24.3.2 (the latest available)
-- Small Ant build script on top of maven to add a bit of old good procedural logic to the build process
-- A bit more rich Vaadin app created via https://start.vaadin.com 
-
-To build:
-
-- Install Java JDK 21 and define your JAVA_HOME
-- Install Ant (1.10.12) and define your ANT_HOME
-- Install Maven (mine is 3.6.3 and never tried a newer version) and define your MAVEN_HOME
-- For Vaadin normal build install also node (18.12.1) and npm (8.19.2)
-
-then run:
-
-    ant
-
-and the list of available task will be printed:
-
-    clean             Clean all not essential elements using maven
-    clean.all         Clean all not essential elements (including all boring JS related Vaadin config)
-    package.electron  Create Electron app ready for distribution  
-
-so to create the final Electron bundle (for Win, Mac and Linux):
-
-    ant package.electron
-
-than take a coffee (first full build take 10 min on my machine...)
-
-If you just want to use maven:
-
-    mvn clean package -Pproduction
-
-and at the end of the process the electron packaged applications (for Win64, Linux and Mac) will be in:
-
-    ./target/electron
-
-# Update of 30 December 2023
-
-Updated version of Vaadin to 24.3.2 and JDK to 21 and SpringBoot to 3.2.1
+    <input type="submit" value="Enviar">
+  </form>
+</body>
+</html>
